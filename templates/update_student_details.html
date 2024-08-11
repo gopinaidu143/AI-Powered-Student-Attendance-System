@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details and Update</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text */
+            font-family: Arial, sans-serif; /* Default font */
+            text-align: center; /* Center align body content */
+            margin: 0;
+            padding: 0;
+        }
+        .form-card {
+            max-width: 400px; /* Limit form card width */
+            margin: 50px auto; /* Center the form card */
+            background-color: #fff; /* White background for form card */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Padding inside the form card */
+        }
+        h1 {
+            color: #dc3545; /* Red color for title */
+            margin-top: 0; /* Remove margin from top */
+            margin-bottom: 20px; /* Add margin below title */
+        }
+        label {
+            display: block; /* Make labels block-level elements */
+            margin-bottom: 10px; /* Add margin below labels */
+            text-align: left; /* Align labels to the left */
+            color: #333; /* Dark gray color for labels */
+            font-weight: bold; /* Bold labels */
+        }
+        input[type="text"] {
+            width: calc(100% - 22px); /* Full width for input fields */
+            padding: 10px; /* Add padding to input fields */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light gray border */
+            margin: 0 auto 20px auto; /* Add margin */
+            display: block; /* Make input fields block-level elements */
+        }
+        button[type="submit"] {
+            background-color: #28a745; /* Green button background */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 30px; /* Add padding to button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block; /* Make button block-level element */
+            margin: 0 auto; /* Center the button */
+        }
+        button[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h1>Student Details</h1>
+        <form action="{{ url_for('update_student_submit', student_id=id) }}" method="POST">
+            <div>
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" value="{{ id }}" readonly required>
+            </div>
+            <div>
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="student_name" value="{{ student['name'] }}" required>
+            </div>
+            <div>
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" value="{{ student['Major'] }}" required>
+            </div>
+            <div>
+                <label for="academic_year">Academic Year:</label>
+                <input type="text" id="academic_year" name="academic_year" value="{{ student['starting_year'] }}" required>
+            </div>
+            <!-- Add additional form fields here if needed -->
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

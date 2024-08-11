@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text */
+            font-family: Arial, sans-serif; /* Default font */
+            text-align: center; /* Center align body content */
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 300px; /* Limit form width */
+            margin: 50px auto; /* Center the form */
+            background-color: #fff; /* White background for form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Padding inside the form */
+        }
+        h1 {
+            color: #dc3545; /* Red color for title */
+            margin: 0; /* Remove margin from top */
+            margin-bottom: 20px; /* Add margin below title */
+        }
+        label {
+            display: block; /* Make labels block-level elements */
+            margin-bottom: 10px; /* Add margin below labels */
+            text-align: center; /* Align labels to the center */
+            color: #333; /* Dark gray color for labels */
+            font-weight: bold; /* Bold labels */
+            width: 100%; /* Make label take up full width of its parent */
+        }
+        input[type="text"] {
+            width: calc(100% - 22px); /* Full width for input fields */
+            padding: 10px; /* Add padding to input fields */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light gray border */
+            margin: 0 auto 20px auto; /* Add margin */
+            display: block; /* Make input fields block-level elements */
+        }
+        button[type="submit"], button[type="button"] {
+            background-color: #28a745; /* Green button background */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 30px; /* Add padding to button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block; /* Make button block-level element */
+            margin: 0 auto 10px auto; /* Center the button */
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .error-message {
+            color: #28a745; /* Green color for error message */
+            margin-top: 10px; /* Add margin on top */
+        }
+    </style>
+</head>
+<body>
+    <form id="studentForm" action="/get_student" method="POST" enctype="multipart/form-data">
+        <h1>Find Students</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'error' %}
+                        <p class="error-message">**{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="student_id">StudentID</label>
+        <input type="text" id="student_id" name="student_id" required>
+        <button type="submit">Submit</button>
+        <button type="button" id="viewAllStudents" onclick="location.href='/get_all_students'">View All Students</button>
+    </form>
+</body>
+</html>

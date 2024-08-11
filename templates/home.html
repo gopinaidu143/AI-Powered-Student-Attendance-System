@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text */
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 400px;
+            text-align: center; /* Center align container content */
+            transition: box-shadow 0.3s ease; /* Transition effect for box-shadow */
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #dc3545; /* Red color for h1 */
+        }
+        .btn {
+            background-color: #28a745; /* Green button background */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            display: block;
+            width: 90%; /* Reduced width */
+            padding: 10px 0; /* Reduced padding */
+            margin: 20px auto; /* Center the button */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s ease; /* Transition effect for background-color */
+        }
+        .btn-secondary {
+            background-color: #28a745; /* Green button background */
+        }
+        .btn:hover, .btn-secondary:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Attendance System</h1>
+        <a href="/admin_login" class="btn">Admin</a>
+        <a href="/student_login" class="btn btn-secondary">Student</a>
+    </div>
+</body>
+</html>

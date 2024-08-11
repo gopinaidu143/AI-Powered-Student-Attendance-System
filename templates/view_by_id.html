@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Default font */
+            text-align: center; /* Center align body content */
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; /* Light gray background */
+        }
+        .card {
+            width: 350px; /* Increased card width */
+            margin: 50px auto; /* Center the card */
+            background-color: #28a745; /* Green card background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            padding: 20px; /* Padding inside the card */
+            color: #000; /* Black text color */
+        }
+        h1 {
+            color: red; /* Red color for title */
+            margin-bottom: 20px; /* Add margin below title */
+        }
+        .student-details {
+            text-align: left;
+        }
+        .student-details div {
+            margin-bottom: 5px;
+            padding: 8px;
+            background-color: #ddd; /* Light gray background for form fields */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        .student-details label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #000; /* Black color for labels */
+        }
+        .student-details span {
+            font-size: 14px; /* Reduced font size for data */
+            color: #000; /* Black color for data */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Student Details</h1>
+        <div class="student-details">
+            <div>
+                <label for="student_id">Student ID:</label>
+                <span>{{ student_id }}</span>
+            </div>
+            <div>
+                <label for="student_name">Name:</label>
+                <span>{{ student_details['name'] }}</span>
+            </div>
+            <div>
+                <label for="branch">Major:</label>
+                <span>{{ student_details['Major'] }}</span>
+            </div>
+            <div>
+                <label for="academic_year">Starting Year:</label>
+                <span>{{ student_details['starting_year'] }}</span>
+            </div>
+            <div>
+                <label for="total_attendance">Total Attendance:</label>
+                <span>{{ student_details['total_attendance'] }}</span>
+            </div>
+            <div>
+                <label for="standing">Standing:</label>
+                <span>{{ student_details['standing'] }}</span>
+            </div>
+            <div>
+                <label for="year">Year:</label>
+                <span>{{ student_details['year'] }}</span>
+            </div>
+            <div>
+                <label for="last_attendance_time">Last Attendance Time:</label>
+                <span>{{ student_details['last_attendance_time'] }}</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

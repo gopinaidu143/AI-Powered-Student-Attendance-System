@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <form action="/update_student/{{ student_id }}" method="POST">
+        <div>
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" value="{{ student_id }}" readonly>
+        </div>
+        <div>
+            <label for="student_name">Student Name:</label>
+            <input type="text" id="student_name" name="student_name" value="{{ name }}">
+        </div>
+        <div>
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" value="{{ branch }}">
+        </div>
+        <div>
+            <label for="academic_year">Academic Year:</label>
+            <input type="text" id="academic_year" name="academic_year" value="{{ academic_year }}">
+        </div>
+        <!-- Add additional form fields here if needed -->
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
